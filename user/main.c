@@ -1,70 +1,50 @@
-#include "stm32f10x.h"// Device header
+#include "stm32f10x.h"
 #include "usart.h"
 #include "KEY.h"
 #include "LED.h"
+#include "Delay.h"
 
-
-
-
-
-task_manager_t LED_TASK_manager;
-
-void LED_TASK(void)
+int main(void)
 {
-	printf("LED_TASK is running\r\n");
-	task_SetPeriod(&LED_TASK_manager,2,500);
-}
-void KEY_TASK(void)
-{
-    printf("KEY_TASK is running\r\n");
-}
-void USART_TASK(void)
-{
-    printf("USART_TASK is running\r\n");
-}
+   
+    SysTick_Config(SystemCoreClock / 1000);
 
-void main(void)
-{
-		SysTick_Config(SystemCoreClock / 1000);  
-		led_init();
+  
     UART_init(115200);
-    task_Init(&LED_TASK_manager);
-    task_Register(&LED_TASK_manager, 1, LED_TASK, 500);
-    task_Register(&LED_TASK_manager, 2, KEY_TASK, 2000);
-    task_Register(&LED_TASK_manager, 3, USART_TASK, 1000);
-    task_StartScheduler(&LED_TASK_manager);
-		printf("Task Scheduler Start\r\n");
+    led_init();
+    key_init();
 
-    while (1)
-    {   
-       task_Run(&LED_TASK_manager);
+    event_st event;
+		printf("Event Start : \r\n");
+
+    while(1)
+    {
+        /* 从事件队列中取事件 */
+        if(quent_pop(&key_queue, &event) == quent_OK)
+        {
+            
+            if(event.event_name == KEY1_EVENT && event.event_flag == KEY1_PRESS)
+            {
+                    printf("key_event START\r\n");
+            }
+        }
     }
-    
 }
-
 
 void USART1_IRQHandler(void)
 {
-		uint8_t data;
+    uint8_t data;
     while (USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
     {
-     data = USART_ReceiveData(USART1);
+        data = USART_ReceiveData(USART1);
     }
-	USART_ClearITPendingBit(USART1, USART_IT_RXNE);
-	if (USART_GetITStatus(USART1, USART_IT_IDLE) != RESET)
+    USART_ClearITPendingBit(USART1, USART_IT_RXNE);
+    if (USART_GetITStatus(USART1, USART_IT_IDLE) != RESET)
     {
-        /* 
-         * 关键：必须先读 DR，再读 SR，才能清除 IDLE 标志
-         * 这是 STM32F1 的硬件特性
-         */
-        volatile uint32_t tmp = USART1->SR;  // 读状态寄存器
-        tmp = USART1->DR;                     // 读数据寄存器（清除 IDLE 位）
+        volatile uint32_t tmp = USART1->SR;
+        tmp = USART1->DR;
         (void)tmp;
-        
-        
+
         USART_ClearITPendingBit(USART1, USART_IT_IDLE);
     }
-   
 }
-
-

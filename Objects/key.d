@@ -29,7 +29,6 @@
 .\objects\key.o: .\libr\stm32f10x_usart.h
 .\objects\key.o: .\libr\stm32f10x_wwdg.h
 .\objects\key.o: .\libr\misc.h
-.\objects\key.o: F:\stm32\ARM\ARMCC\Bin\..\include\string.h
 .\objects\key.o: F:\stm32\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\key.o: hardware\usart.h
 .\objects\key.o: F:\stm32\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\key.o: .\BSP_driver\Delay.h

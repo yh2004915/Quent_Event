@@ -32,6 +32,4 @@
 .\objects\led.o: F:\stm32\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\led.o: F:\stm32\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\led.o: .\hardware\KEY.h
-.\objects\led.o: F:\stm32\ARM\ARMCC\Bin\..\include\string.h
-.\objects\led.o: .\hardware\usart.h
 .\objects\led.o: BSP_driver\Delay.h

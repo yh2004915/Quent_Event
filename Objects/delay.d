@@ -1,7 +1,8 @@
 .\objects\delay.o: BSP_driver\Delay.c
+.\objects\delay.o: BSP_driver\Delay.h
+.\objects\delay.o: F:\stm32\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\delay.o: .\start\stm32f10x.h
 .\objects\delay.o: .\start\core_cm3.h
-.\objects\delay.o: F:\stm32\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\delay.o: .\start\system_stm32f10x.h
 .\objects\delay.o: .\user\stm32f10x_conf.h
 .\objects\delay.o: .\libr\stm32f10x_adc.h
@@ -28,8 +29,3 @@
 .\objects\delay.o: .\libr\stm32f10x_usart.h
 .\objects\delay.o: .\libr\stm32f10x_wwdg.h
 .\objects\delay.o: .\libr\misc.h
-.\objects\delay.o: .\hardware\KEY.h
-.\objects\delay.o: F:\stm32\ARM\ARMCC\Bin\..\include\string.h
-.\objects\delay.o: F:\stm32\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\delay.o: .\hardware\usart.h
-.\objects\delay.o: F:\stm32\ARM\ARMCC\Bin\..\include\stdlib.h

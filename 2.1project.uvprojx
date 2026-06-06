@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\start;.\user;.\libr;.\hardware</IncludePath>
+              <IncludePath>.\start;.\user;.\libr;.\hardware;.\BSP_driver</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -722,6 +722,31 @@
               <FileName>usart.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hardware\usart.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>BSP_driver</GroupName>
+          <Files>
+            <File>
+              <FileName>Delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BSP_driver\Delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>Delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\BSP_driver\Delay.h</FilePath>
+            </File>
+            <File>
+              <FileName>LED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\BSP_driver\LED.c</FilePath>
+            </File>
+            <File>
+              <FileName>LED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\BSP_driver\LED.h</FilePath>
             </File>
           </Files>
         </Group>

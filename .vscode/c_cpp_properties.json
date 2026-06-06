@@ -3,10 +3,11 @@
         {
             "name": "Target 1",
             "includePath": [
-                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本\\start",
-                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本\\user",
-                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本\\libr",
-                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本\\hardware",
+                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本 - 副本\\start",
+                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本 - 副本\\user",
+                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本 - 副本\\libr",
+                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本 - 副本\\hardware",
+                "c:\\Users\\xiaoyu\\Desktop\\stm32\\单人\\2.1 - 副本 - 副本\\BSP_driver",
                 "F:\\stm32\\ARM\\ARMCC\\include",
                 "F:\\stm32\\ARM\\ARMCC\\include\\rw"
             ],
